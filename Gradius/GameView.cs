@@ -1,5 +1,6 @@
 ﻿using System;
 using Android.Content;
+using Android.Graphics;
 using Android.Util;
 using Android.Views;
 using Java.Lang;
@@ -14,6 +15,7 @@ namespace Gradius
         public static bool isDead, isPaused, isUpdating;
 
         private Player player;
+        private Score score;
 
 
         public GameView(Context context) : base(context)
@@ -32,9 +34,17 @@ namespace Gradius
 
         }
 
-        private void Initialize(Context context)
+        private void Initialize(Context co)
         {
-            throw new NotImplementedException();
+            context = co;
+
+            SetBackgroundColor(Color.Black);
+
+            screenW = context.Resources.DisplayMetrics.WidthPixels;
+            screenH = context.Resources.DisplayMetrics.HeightPixels;
+
+            player = new Player();
+
         }
         public void Run()
         {

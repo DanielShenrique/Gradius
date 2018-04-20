@@ -54,11 +54,15 @@
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bullet.cs" />
+    <Compile Include="Enemy.cs" />
+    <Compile Include="Game.cs" />
     <Compile Include="GameView.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Score.cs" />
     <Compile Include="StartScreenView.cs" />
   </ItemGroup>
   <ItemGroup>
