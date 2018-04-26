@@ -25,12 +25,12 @@ namespace Gradius
         public float GetW() { return width; }
         public float GetH() { return height; }
 
-        void DrawImage(Canvas canvas)
+        public void DrawImage(Canvas canvas)
         {
             canvas.DrawRect(x, y, x + width, y + width, blue);
         }
 
-        void Update()
+        public void Update()
         {
             if (ismoving)
             {

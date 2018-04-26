@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
+﻿using Android.Content;
 using Android.Graphics;
 using Android.OS;
-using Android.Runtime;
 using Android.Util;
 using Android.Views;
-using Android.Widget;
 
 namespace Gradius
 {
@@ -39,8 +31,7 @@ namespace Gradius
         private void Initialize(Context c)
         {
             context = c;
-
-            //background = BitmapFactory.DecodeResource(Resources, Resource.Drawable.arkanoid_title_screen);
+            background = BitmapFactory.DecodeResource(Resources, Resource.Drawable.tela_de_vitoria);
             paint = new Paint();
             paint.Color = Color.White;
         }
