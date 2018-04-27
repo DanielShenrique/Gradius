@@ -14,7 +14,7 @@ namespace Gradius
             RequestedOrientation = Android.Content.PM.ScreenOrientation.Landscape;
 
             // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.Main);
+            SetContentView(new StartScreenView(this));
         }
     }
 }

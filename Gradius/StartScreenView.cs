@@ -31,7 +31,7 @@ namespace Gradius
         private void Initialize(Context c)
         {
             context = c;
-            background = BitmapFactory.DecodeResource(Resources, Resource.Drawable.tela_de_vitoria);
+            background = BitmapFactory.DecodeResource(Resources, Resource.Drawable.gradius_inicio);
             paint = new Paint();
             paint.Color = Color.White;
         }

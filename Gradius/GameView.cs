@@ -47,15 +47,18 @@ namespace Gradius
         {
             context = co;
 
-            SetBackgroundColor(Color.Black);
+            SetBackgroundColor(Color.White);
 
             screenW = context.Resources.DisplayMetrics.WidthPixels;
             screenH = context.Resources.DisplayMetrics.HeightPixels;
 
+            isDead = isPaused = false;
+            isUpdating = true;
+
             white = new Paint();
             white.SetARGB(255, 255, 255, 255);
 
-            player = new Player();
+            player = new Player(BitmapFactory.DecodeResource(Resources, Resource.Drawable.nave_game));
 
             score = new Score();
 

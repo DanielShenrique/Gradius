@@ -11,7 +11,10 @@ public final class R {
     public static final class attr {
     }
     public static final class drawable {
-        public static final int tela_de_vitoria=0x7f020000;
+        public static final int gradius_inicio=0x7f020000;
+        public static final int inimigo=0x7f020001;
+        public static final int nave_game=0x7f020002;
+        public static final int tela_de_vitoria=0x7f020003;
     }
     public static final class layout {
         public static final int main=0x7f030000;

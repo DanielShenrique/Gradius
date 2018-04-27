@@ -1,23 +1,27 @@
 ﻿using Android.Graphics;
 using Android.Views;
+using Android.OS;
 namespace Gradius
 {
     class Player
     {
         private Paint blue;
+        private Bitmap nave;
         private float x, y, width, height, speedx;
-        private bool ismoving, ismovingleft;
+        private bool ismoving, ismovingdown;
 
-        public Player() {
+        public Player(Bitmap image) {
 
             blue = new Paint();
             blue.SetARGB(200, 0, 0, 255);
+
+            nave = image;
 
             width = GameView.screenW * 0.02f;
             height = GameView.screenH * 0.02f;
 
             speedx = 5f;
-            ismoving = ismovingleft = false;
+            ismoving = ismovingdown = false;
         }
 
         public float GetX() { return x; }
@@ -27,20 +31,22 @@ namespace Gradius
 
         public void DrawImage(Canvas canvas)
         {
-            canvas.DrawRect(x, y, x + width, y + width, blue);
+            //canvas.DrawRect(x, y, x + width, y + width, blue);
+            canvas.DrawBitmap(nave, x, y, blue);
+
         }
 
         public void Update()
         {
             if (ismoving)
             {
-                if (ismovingleft)
+                if (ismovingdown)
                 {
-                    x -= speedx;
+                    y -= speedx;
                 }
                 else
                 {
-                    x += speedx;
+                    y += speedx;
                 }
             }
         }
@@ -48,13 +54,13 @@ namespace Gradius
 
         void CollisionWithScreen()
         {
-            if(x < 0)
+            if(y < 0)
             {
-                x += speedx;
+                y += speedx;
             }
-            else if (x + width > GameView.screenW)
+            else if (y + width > GameView.screenW)
             {
-                x -= speedx;
+                y -= speedx;
             }      
         }
 
@@ -64,7 +70,7 @@ namespace Gradius
                e.Action == MotionEventActions.Move)
             {
                 ismoving = true;
-                ismovingleft = x > e.RawX; // x = true || false
+                ismovingdown = y > e.RawY; //  = true || false
             }
             else if (e.Action == MotionEventActions.Up)
                 ismoving = false;
