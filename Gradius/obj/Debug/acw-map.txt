@@ -1,3 +1,7 @@
+Gradius.Derrota, Gradius;md5c9dd1a48177c3b4a3ba7a4a8f3ca11d3.Derrota
+Gradius.Derrota, Gradius, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5c9dd1a48177c3b4a3ba7a4a8f3ca11d3.Derrota
+Gradius.Derrota;md5c9dd1a48177c3b4a3ba7a4a8f3ca11d3.Derrota
+gradius.Derrota;md5c9dd1a48177c3b4a3ba7a4a8f3ca11d3.Derrota
 Gradius.Game, Gradius;md5c9dd1a48177c3b4a3ba7a4a8f3ca11d3.Game
 Gradius.Game, Gradius, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5c9dd1a48177c3b4a3ba7a4a8f3ca11d3.Game
 Gradius.Game;md5c9dd1a48177c3b4a3ba7a4a8f3ca11d3.Game

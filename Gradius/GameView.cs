@@ -16,7 +16,6 @@ namespace Gradius
         public static bool isDead, isPaused, isUpdating;
 
         private Player player;
-        private Score score;
 
         private Paint white;
 
@@ -60,7 +59,6 @@ namespace Gradius
 
             player = new Player(BitmapFactory.DecodeResource(Resources, Resource.Drawable.nave_game));
 
-            score = new Score();
 
             handler = new Handler();
             handler.Post(this);
@@ -87,27 +85,20 @@ namespace Gradius
             if (!isDead && !isPaused)
             {
                 player.DrawImage(canvas);
-                score.Draw(canvas);
 
-
-                canvas.DrawText("High score: " + highScore.ToString(), screenW * 0.65f, screenH * 0.03f, white);
+                //canvas.DrawText("High score: " + highScore.ToString(), screenW * 0.65f, screenH * 0.03f, white);
             }
             else
                 canvas.DrawText("Touch to restart", screenW * 0.2f, screenH * 0.5f, white);
         }
         private void RestartGame()
         {
-            score = new Score();
+            player.GetX();
             isDead = false;
         }
 
         private void GameOver()
         {
-            if (Score.score > highScore)
-            {
-                dt.SetHighScore(Score.score);
-                highScore = Score.score;
-            }
         }
 
         private void Update()

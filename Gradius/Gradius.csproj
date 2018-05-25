@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bullet.cs" />
+    <Compile Include="Derrota.cs" />
     <Compile Include="DataStorage.cs" />
     <Compile Include="Enemy.cs" />
     <Compile Include="Game.cs" />

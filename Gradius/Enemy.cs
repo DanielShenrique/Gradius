@@ -9,8 +9,8 @@ namespace Gradius
     {
         private Paint red;
         private Bitmap inimigo;
-        private float x, y, width, height;
-        private bool removed;
+        //private float x, y, width, height;
+        //private bool removed;
 
         public Enemy(Bitmap image)
         {
@@ -27,7 +27,7 @@ namespace Gradius
 
         public void DrawImage(Canvas canvas)
         {
-            canvas.DrawBitmap(inimigo, x, y, red);
+            //canvas.DrawBitmap(inimigo, x, y, red);
 
         }
     }

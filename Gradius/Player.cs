@@ -1,6 +1,9 @@
 ﻿using Android.Graphics;
 using Android.Views;
 using Android.OS;
+using Android.Util;
+using Android.Content;
+
 namespace Gradius
 {
     class Player
@@ -10,10 +13,14 @@ namespace Gradius
         private float x, y, width, height, speedx;
         private bool ismoving, ismovingdown;
 
+        private float time;
+
         public Player(Bitmap image) {
 
             blue = new Paint();
             blue.SetARGB(200, 0, 0, 255);
+
+            time = 0f;
 
             nave = image;
 
@@ -31,8 +38,12 @@ namespace Gradius
 
         public void DrawImage(Canvas canvas)
         {
-            //canvas.DrawRect(x, y, x + width, y + width, blue);
-            canvas.DrawBitmap(nave, x, y, blue);
+            if(time <= 5)
+                canvas.DrawBitmap(nave, x, y, blue);
+            else
+            {
+               
+            }
 
         }
 
@@ -66,11 +77,12 @@ namespace Gradius
 
         public void PreUpdate(MotionEvent e)
         {
-            if (e.Action == MotionEventActions.Down ||
-               e.Action == MotionEventActions.Move)
+            if (e.Action == MotionEventActions.Move)
             {
                 ismoving = true;
-                ismovingdown = y > e.RawY; //  = true || false
+                time += 1;
+                Log.Debug("Inhame",time + "");
+                ismovingdown = x > e.RawX; //  = true || false
             }
             else if (e.Action == MotionEventActions.Up)
                 ismoving = false;

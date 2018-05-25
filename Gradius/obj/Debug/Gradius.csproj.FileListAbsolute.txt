@@ -9,14 +9,11 @@ C:\Users\Aluno\Documents\GitHub\Gradius\Gradius\obj\Debug\android\bin\Gradius.Gr
 C:\Users\Aluno\Documents\GitHub\Gradius\Gradius\obj\Debug\res\layout\main.xml
 C:\Users\Aluno\Documents\GitHub\Gradius\Gradius\obj\Debug\res\values\strings.xml
 C:\Users\Aluno\Documents\GitHub\Gradius\Gradius\obj\Debug\res\drawable-hdpi\tela_de_vitoria.jpg
-C:\Users\Aluno\Documents\GitHub\Gradius\Gradius\obj\Debug\R.cs.flag
-C:\Users\Aluno\Documents\GitHub\Gradius\Gradius\obj\Debug\uploadflags.txt
-C:\Users\Aluno\Documents\GitHub\Gradius\Gradius\bin\Debug\Gradius.dll.mdb
-C:\Users\Aluno\Documents\GitHub\Gradius\Gradius\obj\Debug\android\assets\Gradius.dll.mdb
-C:\Users\Aluno\Documents\GitHub\Gradius\Gradius\obj\Debug\Gradius.csprojResolveAssemblyReference.cache
 C:\Users\Aluno\Documents\GitHub\Gradius\Gradius\obj\Debug\res\drawable-hdpi\gradius_inicio.png
 C:\Users\Aluno\Documents\GitHub\Gradius\Gradius\obj\Debug\res\drawable-hdpi\nave_game.png
 C:\Users\Aluno\Documents\GitHub\Gradius\Gradius\obj\Debug\res\drawable-hdpi\inimigo.png
+C:\Users\Aluno\Documents\GitHub\Gradius\Gradius\obj\Debug\R.cs.flag
+C:\Users\Aluno\Documents\GitHub\Gradius\Gradius\obj\Debug\uploadflags.txt
 C:\Users\Aluno\Documents\GitHub\Gradius\Gradius\bin\Debug\Gradius.dll
 bin\Debug\Mono.Android.pdb
 bin\Debug\mscorlib.pdb

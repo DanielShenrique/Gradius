@@ -6,8 +6,6 @@ namespace Gradius
     {
         private Paint yellow;
         private float x, y, radius, speedX;
-        private bool couldCollide;
-
 
         public void Ball()
         {
