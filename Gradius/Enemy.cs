@@ -1,7 +1,6 @@
-﻿using Android.Graphics;
-using Android.Views;
+﻿using Android.Content;
+using Android.Graphics;
 using Android.OS;
-
 
 namespace Gradius
 {
@@ -9,10 +8,14 @@ namespace Gradius
     {
         private Paint red;
         private Bitmap inimigo;
-        //private float x, y, width, height;
-        //private bool removed;
+        private float posX, posY, width, height, speedx;
+        private bool removed;
+		private bool ismoving, ismovingright;
+        private bool coll;
 
-        public Enemy(Bitmap image)
+        private Context  context;
+
+		public Enemy(Bitmap image)
         {
 
             red = new Paint();
@@ -20,15 +23,72 @@ namespace Gradius
 
             inimigo = image;
 
+            posX = 15f;
+            posY = 15f;
 
-            
+			width = GameView.screenW * 5f;
+			height = GameView.screenH * 5f;
 
-        }
+            speedx = 0.05f;
 
-        public void DrawImage(Canvas canvas)
+            ismoving = ismovingright = true;
+
+           
+		}
+        public float GetX() { return posX; }
+        public float GetY() { return posY; }
+        public float GetW() { return width; }
+        public float GetH() { return height; }
+
+        public void Update(Bullet bullet)
+		{
+			if (ismoving)
+			{
+				if (ismovingright)
+				{
+				   posX -= speedx;
+				}
+			}
+            CollBulle(bullet);
+		}
+
+		public void DrawImage(Canvas canvas)
         {
-            //canvas.DrawBitmap(inimigo, x, y, red);
+            if(coll == false)
+                canvas.DrawBitmap(inimigo, posX * 60 , posY, red);
+            else
+            {
+                Intent i = new Intent(context,typeof(VitoriaActivity));
+
+                Bundle myParameters = new Bundle();
+                myParameters.PutString(Intent.ExtraText, "Good");
+
+                i.PutExtras(myParameters);
+                context.StartActivity(i);
+            }
 
         }
-    }
-} 
+
+        public void CollBulle(Bullet bullet)
+        {
+            if (posX < bullet.GetX() + bullet.GetRad()
+                && posX + (width + height) > bullet.GetX()
+                && posY - (width + height) < bullet.GetY() + bullet.GetRad()
+                && posY + (width + height) > bullet.GetY())
+            {
+                coll = true;
+            }
+        }
+
+		public bool Removed
+		{
+			get { return removed; }
+			set { removed = value; }
+		}
+
+
+	}
+
+
+}
+ 

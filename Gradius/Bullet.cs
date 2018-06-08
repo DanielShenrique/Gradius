@@ -1,53 +1,60 @@
-﻿using Android.Graphics;
+﻿using System;
+using Android.Graphics;
 
 namespace Gradius
 {
     class Bullet
     {
-        private Paint yellow;
-        private float x, y, radius, speedX;
+		private Paint blue;
+		private Bitmap tiro;
+		private float posX, posY, radius, speedX;
+        private bool couldCollide;
 
-        public void Ball()
-        {
-            yellow = new Paint();
-            yellow.SetARGB(222, 162, 0, 0);
+		public Bullet (Bitmap image)
+		{
 
-            x = GameView.screenW / 2;
-            y = GameView.screenH / 2;
+			blue = new Paint();
+			blue.SetARGB(200, 0, 0, 255);
 
-            radius = GameView.screenW * 0.04f;
-            speedX = 6;
+            posX = 15f;
+            posY = 0f;
 
-        }
+            couldCollide = false;
 
-        public void Draw(Canvas canvas)
-        {
-            canvas.DrawCircle(x, y, radius, yellow);
-        }
+            radius = 5f;
+            speedX = 3f;
 
-        public void Update(Player player)
-        {
-            x += speedX;
-        }
+			tiro = image;
+		}
 
-        void CollisionWithScreen()
-        {
-            if (x + radius > GameView.screenW)
+        public float GetX() { return posX; }
+        public float GetY() { return posY; }
+        public float GetRad() { return radius; }
+
+        public void DrawImage(Canvas canvas)
+		{
+            if(couldCollide == false)
+			    canvas.DrawBitmap(tiro, posX, posY, blue);
+            else
             {
-                Destroy();
+                
             }
-        }
-
-        void CollisionWithEnemys()
+		}
+		public void Update(Enemy enemy)
         {
-            
-
-
+           posX -= speedX;
+           CollisionWithEnemys(enemy);
         }
 
-
-        void Destroy() {
-            Draw(null);
+        void CollisionWithEnemys(Enemy enemy)
+        {
+            if ( posX - radius < enemy.GetX() + enemy.GetW() 
+                && posX + radius > enemy.GetX() 
+                && posY - radius < enemy.GetY() + enemy.GetH() 
+                && posY+ radius > enemy.GetY())
+            {
+                couldCollide = true;
+            }            
         }
     }
 }

@@ -4,7 +4,7 @@ using System;
 
 namespace Gradius
 {
-    /*class Score
+    class Score
     {
         public static int score;
         private Paint white;
@@ -22,5 +22,5 @@ namespace Gradius
         {
             canvas.DrawText(score.ToString(), GameView.screenW * 0.02f, GameView.screenH * 0.02f, white);
         }
-    }*/
+    }
 }

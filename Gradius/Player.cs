@@ -10,24 +10,36 @@ namespace Gradius
     {
         private Paint blue;
         private Bitmap nave;
-        private float x, y, width, height, speedx;
+        private float x, y, width, height, speedy;
         private bool ismoving, ismovingdown;
+        private Context context;
 
-        private float time;
+        public bool coll;
 
-        public Player(Bitmap image) {
+
+        private void Initialize(Context c)
+        {
+            context = c;
 
             blue = new Paint();
             blue.SetARGB(200, 0, 0, 255);
 
-            time = 0f;
+            coll = false;
+        }
+
+
+        public Player(Bitmap image) {
 
             nave = image;
+
+            x = 5f; 
 
             width = GameView.screenW * 0.02f;
             height = GameView.screenH * 0.02f;
 
-            speedx = 5f;
+            speedy = 5f;
+ 
+
             ismoving = ismovingdown = false;
         }
 
@@ -38,28 +50,38 @@ namespace Gradius
 
         public void DrawImage(Canvas canvas)
         {
-            if(time <= 5)
+            if(coll == false)
                 canvas.DrawBitmap(nave, x, y, blue);
             else
             {
-               
+                Intent i = new Intent(context, typeof(DerrotaActivity));
+
+                /*Bundle myParameters = new Bundle();
+                myParameters.PutString(Intent.ExtraText, "Noooo");
+           
+                i.PutExtras(myParameters);*/
+                context.StartActivity(i);
             }
 
         }
 
-        public void Update()
+        public void Update(Enemy enemy)
         {
             if (ismoving)
             {
                 if (ismovingdown)
                 {
-                    y -= speedx;
+                    //Log.Debug("CIMA", "TRUE");
+                    y -= speedy;
                 }
                 else
                 {
-                    y += speedx;
+                    //Log.Debug("CIMA", "False");
+                    y += speedy;
                 }
             }
+            CollisionWithScreen();
+            CollisionEnemy(enemy);
         }
 
 
@@ -67,22 +89,39 @@ namespace Gradius
         {
             if(y < 0)
             {
-                y += speedx;
+                y += speedy;
             }
             else if (y + width > GameView.screenW)
             {
-                y -= speedx;
+                y -= speedy;
             }      
         }
 
-        public void PreUpdate(MotionEvent e)
+        public void CollisionEnemy(Enemy enemy)
+        {
+
+            if (x < enemy.GetX() + enemy.GetH()
+                && x + (width + height) > enemy.GetX()
+                && y - (width + height) < enemy.GetY() + enemy.GetW()
+                && y + (width + height) > enemy.GetY())
+            {
+                coll = true;
+            }
+        }
+
+		public void PreUpdate(MotionEvent e)
         {
             if (e.Action == MotionEventActions.Move)
             {
                 ismoving = true;
-                time += 1;
-                Log.Debug("Inhame",time + "");
-                ismovingdown = x > e.RawX; //  = true || false
+                if (y > e.RawY)
+                {
+                    ismovingdown = true;
+                }
+                else
+                {
+                    ismovingdown = false;
+                }
             }
             else if (e.Action == MotionEventActions.Up)
                 ismoving = false;
