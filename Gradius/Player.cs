@@ -16,19 +16,9 @@ namespace Gradius
 
         public bool coll;
 
+        public Player(Bitmap image, Context c) {
 
-        private void Initialize(Context c)
-        {
             context = c;
-
-            blue = new Paint();
-            blue.SetARGB(200, 0, 0, 255);
-
-            coll = false;
-        }
-
-
-        public Player(Bitmap image) {
 
             nave = image;
 
@@ -39,8 +29,12 @@ namespace Gradius
 
             speedy = 5f;
  
-
             ismoving = ismovingdown = false;
+
+            blue = new Paint();
+            blue.SetARGB(200, 0, 0, 255);
+
+            coll = false;
         }
 
         public float GetX() { return x; }
@@ -52,14 +46,10 @@ namespace Gradius
         {
             if(coll == false)
                 canvas.DrawBitmap(nave, x, y, blue);
-            else
+            else if(coll == true)
             {
                 Intent i = new Intent(context, typeof(DerrotaActivity));
 
-                /*Bundle myParameters = new Bundle();
-                myParameters.PutString(Intent.ExtraText, "Noooo");
-           
-                i.PutExtras(myParameters);*/
                 context.StartActivity(i);
             }
 
@@ -105,7 +95,7 @@ namespace Gradius
                 && y - (width + height) < enemy.GetY() + enemy.GetW()
                 && y + (width + height) > enemy.GetY())
             {
-                coll = true;
+                //coll = true;
             }
         }
 

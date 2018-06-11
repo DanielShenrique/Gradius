@@ -62,11 +62,11 @@ namespace Gradius
             white = new Paint();
             white.SetARGB(255, 255, 255, 255);
 
-            player = new Player(BitmapFactory.DecodeResource(Resources, Resource.Drawable.nave_game));
+            player = new Player(BitmapFactory.DecodeResource(Resources, Resource.Drawable.nave_game), context);
 
 			bullet = new Bullet(BitmapFactory.DecodeResource(Resources, Resource.Drawable.tiro));
 
-			enemy = new Enemy(BitmapFactory.DecodeResource(Resources, Resource.Drawable.inimigo));
+			enemy = new Enemy(BitmapFactory.DecodeResource(Resources, Resource.Drawable.inimigo), context);
             // score = new Score();
 
             handler = new Handler();

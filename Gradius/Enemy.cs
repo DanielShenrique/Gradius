@@ -15,8 +15,9 @@ namespace Gradius
 
         private Context  context;
 
-		public Enemy(Bitmap image)
+		public Enemy(Bitmap image, Context c)
         {
+            context = c;
 
             red = new Paint();
             red.SetARGB(182, 0, 0, 0);
@@ -56,14 +57,10 @@ namespace Gradius
         {
             if(coll == false)
                 canvas.DrawBitmap(inimigo, posX * 60 , posY, red);
-            else
+            else if(coll == true)
             {
-                Intent i = new Intent(context,typeof(VitoriaActivity));
+                Intent i = new Intent(context, typeof(VitoriaActivity));
 
-                Bundle myParameters = new Bundle();
-                myParameters.PutString(Intent.ExtraText, "Good");
-
-                i.PutExtras(myParameters);
                 context.StartActivity(i);
             }
 
@@ -76,7 +73,7 @@ namespace Gradius
                 && posY - (width + height) < bullet.GetY() + bullet.GetRad()
                 && posY + (width + height) > bullet.GetY())
             {
-                coll = true;
+                //coll = true;
             }
         }
 
