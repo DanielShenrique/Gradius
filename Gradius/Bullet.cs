@@ -16,8 +16,8 @@ namespace Gradius
 			blue = new Paint();
 			blue.SetARGB(200, 0, 0, 255);
 
-            posX = 0f;
-            posY = 0f;
+            posX = 25f;
+            posY = 17f;
 
             couldCollide = false;
 
