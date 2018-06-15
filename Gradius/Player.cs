@@ -24,8 +24,8 @@ namespace Gradius
 
             x = 5f; 
 
-            width = GameView.screenW * 0.02f;
-            height = GameView.screenH * 0.02f;
+            width = nave.Width;
+            height = nave.Height;
 
             speedy = 5f;
  

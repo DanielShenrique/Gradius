@@ -16,7 +16,7 @@ namespace Gradius
 			blue = new Paint();
 			blue.SetARGB(200, 0, 0, 255);
 
-            posX = 15f;
+            posX = 40f;
             posY = 0f;
 
             couldCollide = false;
@@ -42,16 +42,16 @@ namespace Gradius
 		}
 		public void Update(Enemy enemy)
         {
-           posX -= speedX;
+           posX += speedX;
            CollisionWithEnemys(enemy);
         }
 
         void CollisionWithEnemys(Enemy enemy)
         {
-            if ( posX - radius < enemy.GetX() + enemy.GetW() 
-                && posX + radius > enemy.GetX() 
-                && posY - radius < enemy.GetY() + enemy.GetH() 
-                && posY+ radius > enemy.GetY())
+            if ( posX > enemy.GetX()
+                && posX + tiro.Width < enemy.GetX() + enemy.GetW() 
+                && posY > enemy.GetY()
+                && posY + tiro.Height > enemy.GetY() + enemy.GetH())
             {
                 couldCollide = true;
             }            

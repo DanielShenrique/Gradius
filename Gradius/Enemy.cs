@@ -27,8 +27,8 @@ namespace Gradius
             posX = 15f;
             posY = 15f;
 
-			width = GameView.screenW * 5f;
-			height = GameView.screenH * 5f;
+			width = inimigo.Width;
+			height = inimigo.Height;
 
             speedx = 0.05f;
 
