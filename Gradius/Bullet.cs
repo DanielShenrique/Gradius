@@ -27,7 +27,7 @@ namespace Gradius
 
             width = tiro.Width;
             height = tiro.Height;
-        }
+		}
 
         public float GetX() { return posX; }
         public float GetY() { return posY; }
