@@ -25,13 +25,13 @@ namespace Gradius
 
             inimigo = image;
 
-            posX = 15f;
-            posY = 15f;
+            posX = 900f;
+            posY = 0f;
 
 			width = inimigo.Width;
 			height = inimigo.Height;
 
-            speedx = 0.05f;
+            speedx = 5f;
 
             ismoving = ismovingright = true;
 
@@ -57,7 +57,7 @@ namespace Gradius
 		public void DrawImage(Canvas canvas)
         {
             if(coll == false)
-                canvas.DrawBitmap(inimigo, posX * 60 , posY, red);
+                canvas.DrawBitmap(inimigo, posX , posY, red);
             else if(coll == true)
             {
                 Intent i = new Intent(context, typeof(VitoriaActivity));
@@ -74,7 +74,7 @@ namespace Gradius
                 && posY < bullet.GetY() + bullet.GetH()
                 && posY + inimigo.Height > bullet.GetY())
             {
-                //coll = true;
+                coll = true;
                 Log.Debug("TAGGGGGG", "Aaaaaaaaa");
             }
         }

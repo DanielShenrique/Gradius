@@ -22,7 +22,8 @@ namespace Gradius
 
             nave = image;
 
-            x = 5f; 
+            x = 5f;
+            y = 0f;
 
             width = nave.Width;
             height = nave.Height;
