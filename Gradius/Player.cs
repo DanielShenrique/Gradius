@@ -27,7 +27,7 @@ namespace Gradius
             width = nave.Width;
             height = nave.Height;
 
-            speedy = 5f;
+            speedy = 10f;
  
             ismoving = ismovingdown = false;
 

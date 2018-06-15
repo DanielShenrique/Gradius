@@ -74,7 +74,7 @@ namespace Gradius
                 && posY < bullet.GetY() + bullet.GetH()
                 && posY + inimigo.Height > bullet.GetY())
             {
-                coll = true;
+                //coll = true;
                 Log.Debug("TAGGGGGG", "Aaaaaaaaa");
             }
         }

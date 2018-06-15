@@ -16,12 +16,12 @@ namespace Gradius
 			blue = new Paint();
 			blue.SetARGB(200, 0, 0, 255);
 
-            posX = 40f;
+            posX = 0f;
             posY = 0f;
 
             couldCollide = false;
 
-            speedX = 3f;            
+            speedX = 10f;            
 
             tiro = image;
 
