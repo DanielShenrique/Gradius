@@ -1,6 +1,7 @@
 ﻿using Android.Content;
 using Android.Graphics;
 using Android.OS;
+using Android.Util;
 
 namespace Gradius
 {
@@ -34,7 +35,7 @@ namespace Gradius
 
             ismoving = ismovingright = true;
 
-           
+            coll = false;
 		}
         public float GetX() { return posX; }
         public float GetY() { return posY; }
@@ -68,12 +69,13 @@ namespace Gradius
 
         public void CollBulle(Bullet bullet)
         {
-            if (posX < bullet.GetX() + bullet.GetRad()
-                && posX + (width + height) > bullet.GetX()
-                && posY - (width + height) < bullet.GetY() + bullet.GetRad()
-                && posY + (width + height) > bullet.GetY())
+            if (posX < bullet.GetX() + bullet.GetW()
+                && posX + inimigo.Width > bullet.GetX()
+                && posY < bullet.GetY() + bullet.GetH()
+                && posY + inimigo.Height > bullet.GetY())
             {
-                //coll = true;
+                coll = true;
+                Log.Debug("TAGGGGGG", "Aaaaaaaaa");
             }
         }
 

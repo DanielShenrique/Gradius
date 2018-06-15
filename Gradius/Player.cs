@@ -90,10 +90,10 @@ namespace Gradius
         public void CollisionEnemy(Enemy enemy)
         {
 
-            if (x < enemy.GetX() + enemy.GetH()
-                && x + (width + height) > enemy.GetX()
-                && y - (width + height) < enemy.GetY() + enemy.GetW()
-                && y + (width + height) > enemy.GetY())
+            if (x > enemy.GetX()
+                && x + nave.Width < enemy.GetX() + enemy.GetW()
+                && y > enemy.GetY()
+                && y + nave.Height > enemy.GetY() + enemy.GetH())
             {
                 //coll = true;
             }

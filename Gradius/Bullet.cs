@@ -7,7 +7,7 @@ namespace Gradius
     {
 		private Paint blue;
 		private Bitmap tiro;
-		private float posX, posY, radius, speedX;
+		private float posX, posY, width, height, speedX;
         private bool couldCollide;
 
 		public Bullet (Bitmap image)
@@ -21,15 +21,18 @@ namespace Gradius
 
             couldCollide = false;
 
-            radius = 5f;
-            speedX = 3f;
+            speedX = 3f;            
 
-			tiro = image;
-		}
+            tiro = image;
+
+            width = tiro.Width;
+            height = tiro.Height;
+        }
 
         public float GetX() { return posX; }
         public float GetY() { return posY; }
-        public float GetRad() { return radius; }
+        public float GetH() { return height; }
+        public float GetW() { return width; }
 
         public void DrawImage(Canvas canvas)
 		{
