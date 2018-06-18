@@ -23,7 +23,7 @@ namespace Gradius
             nave = image;
 
             x = 5f;
-            y = 0f;
+            y = 50f;
 
             width = nave.Width;
             height = nave.Height;
@@ -95,8 +95,8 @@ namespace Gradius
                 && x + nave.Width < enemy.GetX() + enemy.GetW()
                 && y > enemy.GetY()
                 && y + nave.Height > enemy.GetY() + enemy.GetH())
-            {
-                //coll = true;
+            {  
+                coll = true;
             }
         }
 

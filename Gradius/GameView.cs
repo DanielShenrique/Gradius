@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Android.Content;
 using Android.Graphics;
 using Android.OS;
@@ -17,8 +18,7 @@ namespace Gradius
         public static bool isDead, isPaused, isUpdating;
 
         private Player player;
-        //private Score score;
-		private Enemy enemy;
+        private Enemy enemy;
 
 		private Bullet bullet;
 
@@ -26,9 +26,6 @@ namespace Gradius
 
         private Handler handler;
 
-        private int highScore;
-
-        private DataStorage dt;
 
 
         public GameView(Context context) : base(context)
@@ -64,18 +61,15 @@ namespace Gradius
 
             player = new Player(BitmapFactory.DecodeResource(Resources, Resource.Drawable.nave_game), context);
 
-			bullet = new Bullet(BitmapFactory.DecodeResource(Resources, Resource.Drawable.tiro));
+    
+			bullet = new Bullet(BitmapFactory.DecodeResource(Resources, Resource.Drawable.tiro), player);
+     
 
 			enemy = new Enemy(BitmapFactory.DecodeResource(Resources, Resource.Drawable.inimigo), context);
-            // score = new Score();
 
             handler = new Handler();
             handler.Post(this);
-
-            dt = new DataStorage(context);
-            highScore = dt.GetHighScore();
-
-            
+           
         }
 
         public override bool OnTouchEvent(MotionEvent e)
@@ -96,29 +90,18 @@ namespace Gradius
             if (!isDead && !isPaused)
             {
                 player.DrawImage(canvas);
-                //score.Draw(canvas);
                 enemy.DrawImage(canvas);
                 bullet.DrawImage(canvas);
                 
-               // canvas.DrawText("High score: " + highScore.ToString(), screenW * 0.65f, screenH * 0.03f, white);
             }
-            else
-                canvas.DrawText("Touch to restart", screenW * 0.2f, screenH * 0.5f, white);
         }
         private void RestartGame()
         {
-            player.GetX();
-            //score = new Score();
             isDead = false;
         }
 
         private void GameOver()
         {
-           /* if (Score.score > highScore)
-            {
-                dt.SetHighScore(Score.score);
-                highScore = Score.score;
-            }*/
         }
 
         private void Update()

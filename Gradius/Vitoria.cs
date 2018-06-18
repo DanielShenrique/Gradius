@@ -59,7 +59,7 @@ namespace Gradius
                 Intent i = new Intent(context, typeof(MainActivity));
 
                 Bundle myParameters = new Bundle();
-                myParameters.PutString(Intent.ExtraText, "You Win!!!");
+                myParameters.PutString(Intent.ExtraText, "You Win!");
 
                 i.PutExtras(myParameters);
                 context.StartActivity(i);

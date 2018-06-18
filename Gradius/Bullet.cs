@@ -10,14 +10,14 @@ namespace Gradius
 		private float posX, posY, width, height, speedX;
         private bool couldCollide;
 
-		public Bullet (Bitmap image)
+		public Bullet (Bitmap image, Player player)
 		{
 
 			blue = new Paint();
 			blue.SetARGB(200, 0, 0, 255);
 
             posX = 25f;
-            posY = 17f;
+            posY = player.GetY();
 
             couldCollide = false;
 

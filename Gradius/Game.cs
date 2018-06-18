@@ -43,21 +43,21 @@ namespace Gradius
         {
             base.OnPause();
             GameView.isPaused = true;
-            Toast.MakeText(this, "PAUSE!!!!!", ToastLength.Short).Show();
+            //Toast.MakeText(this, "PAUSE!!!!!", ToastLength.Short).Show();
         }
 
         protected override void OnStop()
         {
             base.OnStop();
             GameView.isPaused = true;
-            Toast.MakeText(this, "STOP!!!!!", ToastLength.Short).Show();
+            //Toast.MakeText(this, "STOP!!!!!", ToastLength.Short).Show();
         }
 
         protected override void OnDestroy()
         {
             base.OnDestroy();
             GameView.isUpdating = false;
-            Toast.MakeText(this, "DESTROY!!!!!", ToastLength.Short).Show();
+            //Toast.MakeText(this, "DESTROY!!!!!", ToastLength.Short).Show();
         }
     }
 }

@@ -10,7 +10,6 @@ namespace Gradius
         private Paint red;
         private Bitmap inimigo;
         private float posX, posY, width, height, speedx;
-        private bool removed;
 		private bool ismoving, ismovingright;
         private bool coll;
 
@@ -83,13 +82,6 @@ namespace Gradius
                 Log.Debug("TAGGGGGG", "Aaaaaaaaa");
             }
         }
-
-		public bool Removed
-		{
-			get { return removed; }
-			set { removed = value; }
-		}
-
 
 	}
 

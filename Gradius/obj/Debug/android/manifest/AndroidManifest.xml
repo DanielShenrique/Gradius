@@ -5,7 +5,12 @@
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
   <application android:allowBackup="true" android:label="@string/app_name" android:name="android.app.Application" android:debuggable="true">
-    <activity android:label="Gradius" android:name="md5c9dd1a48177c3b4a3ba7a4a8f3ca11d3.DerrotaActivity" />
+    <activity android:label="Gradius" android:name="md5c9dd1a48177c3b4a3ba7a4a8f3ca11d3.DerrotaActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
     <activity android:label="Game" android:name="md5c9dd1a48177c3b4a3ba7a4a8f3ca11d3.Game">
       <intent-filter>
         <action android:name="GradiusGame" />
@@ -18,7 +23,12 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
-    <activity android:label="Gradius" android:name="md5c9dd1a48177c3b4a3ba7a4a8f3ca11d3.VitoriaActivity" />
+    <activity android:label="Gradius" android:name="md5c9dd1a48177c3b4a3ba7a4a8f3ca11d3.VitoriaActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
     <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="Gradius.Gradius.mono.MonoRuntimeProvider.__mono_init__" />
     <!--suppress ExportedReceiver-->
     <receiver android:name="mono.android.Seppuku">

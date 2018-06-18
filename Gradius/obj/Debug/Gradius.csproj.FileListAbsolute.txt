@@ -185,8 +185,8 @@ C:\Users\aluno.NAVE0\Documents\GitHub\Gradius\Gradius\obj\Debug\uploadflags.txt
 C:\Users\aluno.NAVE0\Documents\GitHub\Gradius\Gradius\obj\Debug\Gradius.csprojResolveAssemblyReference.cache
 C:\Users\aluno.NAVE0\Documents\GitHub\Gradius\Gradius\bin\Debug\Gradius.dll.mdb
 C:\Users\aluno.NAVE0\Documents\GitHub\Gradius\Gradius\obj\Debug\android\assets\Gradius.dll.mdb
-obj\Debug\linksrc\Mono.Android.pdb
 C:\Users\aluno.NAVE0\Documents\GitHub\Gradius\Gradius\bin\Debug\Gradius.dll
+bin\Debug\Mono.Android.pdb
 bin\Debug\mscorlib.pdb
 bin\Debug\System.Core.pdb
 bin\Debug\System.pdb
@@ -197,6 +197,7 @@ bin\Debug\System.ServiceModel.Internals.pdb
 bin\Debug\Mono.Security.pdb
 bin\Debug\System.ComponentModel.Composition.pdb
 obj\Debug\linksrc\Gradius.dll.mdb
+obj\Debug\linksrc\Mono.Android.pdb
 obj\Debug\linksrc\mscorlib.pdb
 obj\Debug\linksrc\System.Core.pdb
 obj\Debug\linksrc\System.pdb

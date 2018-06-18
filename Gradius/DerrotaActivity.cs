@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace Gradius
 {
-    [Activity(Label = "Gradius")]
+    [Activity(Label = "Gradius", MainLauncher = true)]
     class DerrotaActivity: Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
