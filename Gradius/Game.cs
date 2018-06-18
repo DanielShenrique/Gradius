@@ -13,6 +13,7 @@ using Android.Widget;
 namespace Gradius
 {
     [Activity(Label = "Game")]
+    [IntentFilter(new[] { "GradiusGame"}, Categories = new[] { Intent.CategoryDefault})]
     class Game: Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

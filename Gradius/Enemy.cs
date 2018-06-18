@@ -62,7 +62,12 @@ namespace Gradius
             {
                 Intent i = new Intent(context, typeof(VitoriaActivity));
 
+                Bundle parameters = new Bundle();
+                parameters.PutString(Intent.ExtraText, "xx");
+
+                i.PutExtras(parameters);
                 context.StartActivity(i);
+
             }
 
         }
