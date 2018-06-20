@@ -55,7 +55,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bullet.cs" />
-    <Compile Include="DataStorage.cs" />
     <Compile Include="Derrota.cs" />
     <Compile Include="DerrotaActivity.cs" />
     <Compile Include="Enemy.cs" />
@@ -65,7 +64,6 @@
     <Compile Include="Player.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Score.cs" />
     <Compile Include="StartScreenView.cs" />
     <Compile Include="Vitoria.cs" />
     <Compile Include="VitoriaActivity.cs" />

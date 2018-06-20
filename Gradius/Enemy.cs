@@ -62,7 +62,7 @@ namespace Gradius
                 Intent i = new Intent(context, typeof(VitoriaActivity));
 
                 Bundle parameters = new Bundle();
-                parameters.PutString(Intent.ExtraText, "xx");
+                parameters.PutString(Intent.ExtraText, "mer");
 
                 i.PutExtras(parameters);
                 context.StartActivity(i);
