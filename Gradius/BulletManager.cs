@@ -13,7 +13,7 @@ using Android.Widget;
 
 namespace Gradius
 {
-    class BulletManager
+   /* class BulletManager
     {
         private static BulletManager instance;
         private float y;
@@ -36,6 +36,7 @@ namespace Gradius
 
         public void SetupBullet(Bullet bit, Player player )
         {
+
             for (int i = 0; i < numBullet; i++)
             {
                 Bullet bullet = new Bullet(i, bit.GetI(), player);
@@ -51,5 +52,5 @@ namespace Gradius
             return instance;
         }
 
-    }
+    }*/
 }

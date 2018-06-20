@@ -22,6 +22,8 @@ namespace Gradius
 
 		private Bullet bullet;
 
+        //private BulletManager bm;
+
         private Paint white;
 
         private Handler handler;
