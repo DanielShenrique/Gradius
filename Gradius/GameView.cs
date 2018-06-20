@@ -15,11 +15,11 @@ namespace Gradius
         Context context;
 
         public static int screenW, screenH;
-        public static bool isDead, isPaused, isUpdating;
+        public static bool isDead, isPaused, isUpdating, isSendingLetter;
 
         private Player player;
         private Enemy enemy;
-
+		private Letter letter;
 		private Bullet bullet;
 
         //private BulletManager bm;
@@ -55,7 +55,7 @@ namespace Gradius
             screenW = context.Resources.DisplayMetrics.WidthPixels;
             screenH = context.Resources.DisplayMetrics.HeightPixels;
 
-            isDead = isPaused = false;
+            isDead = isPaused = isSendingLetter = false;
             isUpdating = true;
 
             white = new Paint();
@@ -63,9 +63,9 @@ namespace Gradius
 
             player = new Player(BitmapFactory.DecodeResource(Resources, Resource.Drawable.nave_game), context);
 
-    
 			bullet = new Bullet(BitmapFactory.DecodeResource(Resources, Resource.Drawable.tiro), player);
-     
+
+			letter = new Letter(BitmapFactory.DecodeResource(Resources, Resource.Drawable.nave_game), context);
 
 			enemy = new Enemy(BitmapFactory.DecodeResource(Resources, Resource.Drawable.inimigo), context);
 
@@ -94,6 +94,7 @@ namespace Gradius
                 player.DrawImage(canvas);
                 enemy.DrawImage(canvas);
                 bullet.DrawImage(canvas);
+				letter.DrawImage(canvas);
                 
             }
         }
@@ -113,12 +114,33 @@ namespace Gradius
                 player.Update(enemy);
                 enemy.Update(bullet);
                 bullet.Update(enemy);
+				letter.Update(player);
             }
             else if (isDead)
                 GameOver();
+			if (isSendingLetter)
+			{
+				//SendLetterToHangman();
+			}
         }
 
-        public void Run()
+
+		/*private void SendLetterToHangman()
+		{
+			isSendingLetter = false;
+			Intent i = new Intent("GradiusGame");
+			i.AddCategory("Hangman");
+
+			i.AddFlags(ActivityFlags.ReorderToFront);
+
+			Bundle myParameters = new Bundle();
+			myParameters.PutString("Letter", "xxxx");
+
+			i.PutExtras(myParameters);
+			context.StartActivity(i);
+		}*/
+
+		public void Run()
         {
             if (isUpdating)
             {

@@ -59,13 +59,13 @@ namespace Gradius
                 canvas.DrawBitmap(inimigo, posX , posY, red);
             else if(coll == true)
             {
-                Intent i = new Intent(context, typeof(VitoriaActivity));
+                //Intent i = new Intent(context, typeof(VitoriaActivity));
 
-                Bundle parameters = new Bundle();
-                parameters.PutString(Intent.ExtraText, "mer");
+                /*Bundle parameters = new Bundle();
+                parameters.PutString(Intent.ExtraText, "youWin");
 
-                i.PutExtras(parameters);
-                context.StartActivity(i);
+                i.PutExtras(parameters);*/
+                //context.StartActivity(i);
 
             }
 
