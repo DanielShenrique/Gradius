@@ -10,7 +10,7 @@ namespace Gradius
 		private float posX, posY, width, height, speedX;
         private bool couldCollide;
 
-		public Bullet (Bitmap image, Player player)
+		public Bullet (int i, Bitmap image, Player player)
 		{
 
 			blue = new Paint();
@@ -33,6 +33,7 @@ namespace Gradius
         public float GetY() { return posY; }
         public float GetH() { return height; }
         public float GetW() { return width; }
+        public Bitmap GetI() { return tiro; }
 
         public void DrawImage(Canvas canvas)
 		{
