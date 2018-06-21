@@ -28,7 +28,7 @@ namespace Gradius
             width = nave.Width;
             height = nave.Height;
 
-            speedy = 10f;
+            speedy = 11f;
  
             ismoving = ismovingdown = false;
 
@@ -62,12 +62,10 @@ namespace Gradius
             {
                 if (ismovingdown)
                 {
-                    //Log.Debug("CIMA", "TRUE");
                     y -= speedy;
                 }
                 else
                 {
-                    //Log.Debug("CIMA", "False");
                     y += speedy;
                 }
             }

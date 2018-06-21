@@ -15,7 +15,7 @@ namespace Gradius
         Context context;
 
         public static int screenW, screenH;
-        public static bool isDead, isPaused, isUpdating, isSendingLetter;
+        public static bool isDead, isPaused, isUpdating;
 
         private Player player;
         private Enemy enemy;
@@ -27,7 +27,6 @@ namespace Gradius
         private Paint white;
 
         private Handler handler;
-
 
 
         public GameView(Context context) : base(context)
@@ -55,7 +54,7 @@ namespace Gradius
             screenW = context.Resources.DisplayMetrics.WidthPixels;
             screenH = context.Resources.DisplayMetrics.HeightPixels;
 
-            isDead = isPaused = isSendingLetter = false;
+            isDead = isPaused = false;
             isUpdating = true;
 
             white = new Paint();
@@ -71,6 +70,8 @@ namespace Gradius
 
             handler = new Handler();
             handler.Post(this);
+
+			//bm = BulletManager.getInstance(bullet, player);
            
         }
 
@@ -96,6 +97,9 @@ namespace Gradius
                 bullet.DrawImage(canvas);
 				letter.DrawImage(canvas);
                 
+				//foreach(Bullet b in bm.bullets)
+					//b.DrawImage(canvas);
+				
             }
         }
         private void RestartGame()
@@ -113,32 +117,12 @@ namespace Gradius
             {
                 player.Update(enemy);
                 enemy.Update(bullet);
-                bullet.Update(enemy);
+				bullet.Update(enemy);
 				letter.Update(player);
             }
             else if (isDead)
                 GameOver();
-			if (isSendingLetter)
-			{
-				//SendLetterToHangman();
-			}
         }
-
-
-		/*private void SendLetterToHangman()
-		{
-			isSendingLetter = false;
-			Intent i = new Intent("GradiusGame");
-			i.AddCategory("Hangman");
-
-			i.AddFlags(ActivityFlags.ReorderToFront);
-
-			Bundle myParameters = new Bundle();
-			myParameters.PutString("Letter", "xxxx");
-
-			i.PutExtras(myParameters);
-			context.StartActivity(i);
-		}*/
 
 		public void Run()
         {

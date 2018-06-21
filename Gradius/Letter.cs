@@ -70,8 +70,23 @@ namespace Gradius
 			}
 			else
 			{
-
+				SendLetterToHangman();
 			}
+		}
+
+		private void SendLetterToHangman()
+		{
+			
+			/*Intent i = new Intent("Game");
+			i.AddCategory("Hangman");
+
+			i.AddFlags(ActivityFlags.ReorderToFront);
+
+			Bundle myParameters = new Bundle();
+			myParameters.PutString("Letter", "xxxx");
+
+			i.PutExtras(myParameters);
+			context.StartActivity(i);*/
 		}
 
 		public void CollLetter(Player player)

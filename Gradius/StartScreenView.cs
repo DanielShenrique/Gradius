@@ -47,11 +47,6 @@ namespace Gradius
             if (e.Action == MotionEventActions.Up)
             {
                 Intent i = new Intent(context, typeof(Game));
-
-               /* Bundle myParameters = new Bundle();
-                myParameters.PutString(Intent.ExtraText, "Let's Go!!!");
-
-                i.PutExtras(myParameters);*/
                 context.StartActivity(i);
             }
 
