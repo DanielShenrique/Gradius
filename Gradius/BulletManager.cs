@@ -15,7 +15,7 @@ namespace Gradius
 {
    class BulletManager
     {
-        private static BulletManager instance;
+        /*private static BulletManager instance;
         private float y;
 
         public int numBullet;
@@ -50,7 +50,7 @@ namespace Gradius
                 instance = new BulletManager(player, bit);
 
             return instance;
-        }
+        }*/
 
     }
 }

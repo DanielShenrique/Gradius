@@ -97,9 +97,10 @@ namespace Gradius
                 bullet.DrawImage(canvas);
 				letter.DrawImage(canvas);
                 
-				//foreach(Bullet b in bm.bullets)
-					//b.DrawImage(canvas);
-				
+				/*foreach(Bullet b in bm.bullet)
+				{
+					b.DrawImage(canvas);
+				}*/
             }
         }
         private void RestartGame()
@@ -117,7 +118,7 @@ namespace Gradius
             {
                 player.Update(enemy);
                 enemy.Update(bullet);
-				bullet.Update(enemy);
+                bullet.Update(enemy);
 				letter.Update(player);
             }
             else if (isDead)
