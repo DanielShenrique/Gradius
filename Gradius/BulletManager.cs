@@ -13,44 +13,43 @@ using Android.Widget;
 
 namespace Gradius
 {
-   class BulletManager
-    {
-        /*private static BulletManager instance;
-        private float y;
+	class BulletManager
+	{
+		private static BulletManager instace;
 
-        public int numBullet;
-    
-        public List<Bullet> bullets;
+		public List<Bullet> bullets;
 
+		public float yPlayer;
 
-        private BulletManager(Player player, Bullet bit)
-        {
-            numBullet = 10;
+		public int numInst;
 
-            y = player.GetY();
+		private BulletManager(Player player, Bitmap image)
+		{
+			numInst = 10;
 
-            bullets = new List<Bullet>();
-            SetupBullet(bit, player);
-        }
+			bullets = new List<Bullet>();
 
+			InstaceBullets(player, image);
+		}
 
-        public void SetupBullet(Bullet bit, Player player )
-        {
+		public static BulletManager getIntance(Player player, Bitmap image)
+		{
+			if(instace == null)
+				instace = new BulletManager(player, image);
 
-            for (int i = 0; i < numBullet; i++)
-            {
-                Bullet bullet = new Bullet(bit.GetI(), player);
-                bullets.Add(bullet);
-            }
-        }
+			return instace;
+		}
 
-        public static BulletManager getInstance(Bullet bit, Player player)
-        {
-            if (instance == null)
-                instance = new BulletManager(player, bit);
+		public void InstaceBullets(Player player, Bitmap image)
+		{
+			yPlayer = player.GetY();
 
-            return instance;
-        }*/
+			for(int i = 0; i < numInst; i++)
+			{
+				Bullet bullet = new Bullet(player, numInst, i, image);
+				bullets.Add(bullet);
 
-    }
+			}
+		}
+	}
 }

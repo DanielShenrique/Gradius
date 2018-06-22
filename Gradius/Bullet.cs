@@ -10,8 +10,9 @@ namespace Gradius
 		private float posX, posY, width, height, speedX;
         private bool couldCollide;
 
-		public Bullet (Bitmap image, Player player)
+		public Bullet (Player player, int numInst, int i, Bitmap image)
 		{
+			tiro = image;
 
 			blue = new Paint();
 			blue.SetARGB(200, 0, 0, 255);
@@ -21,9 +22,7 @@ namespace Gradius
 
             couldCollide = false;
 
-            speedX = 10f;            
-
-            tiro = image;
+            speedX = 5f;            
 
             width = tiro.Width;
             height = tiro.Height;
@@ -33,11 +32,12 @@ namespace Gradius
         public float GetY() { return posY; }
         public float GetH() { return height; }
         public float GetW() { return width; }
-        public Bitmap GetI() { return tiro; }
 
-        public void DrawImage(Canvas canvas)
+        public void DrawImage(Canvas canvas, Bitmap image)
 		{
-            if(couldCollide == false)
+			tiro = image;
+
+			if (couldCollide == false)
 			    canvas.DrawBitmap(tiro, posX, posY, blue);
             else
             {
@@ -57,7 +57,8 @@ namespace Gradius
                 && posY > enemy.GetY()
                 && posY + tiro.Height > enemy.GetY() + enemy.GetH())
             {
-                couldCollide = true;
+				couldCollide = true;
+				enemy.Destroy = true;
             }            
         }
     }

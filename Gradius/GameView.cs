@@ -20,9 +20,9 @@ namespace Gradius
         private Player player;
         private Enemy enemy;
 		private Letter letter;
-		private Bullet bullet;
-
-        //private BulletManager bm;
+		private BulletManager bulletM;
+		
+		private Bitmap tiro;
 
         private Paint white;
 
@@ -62,7 +62,9 @@ namespace Gradius
 
             player = new Player(BitmapFactory.DecodeResource(Resources, Resource.Drawable.nave_game), context);
 
-			bullet = new Bullet(BitmapFactory.DecodeResource(Resources, Resource.Drawable.tiro), player);
+			tiro = BitmapFactory.DecodeResource(Resources, Resource.Drawable.tiro);
+
+			bulletM = BulletManager.getIntance(player , tiro);
 
 			letter = new Letter(BitmapFactory.DecodeResource(Resources, Resource.Drawable.nave_game), context);
 
@@ -70,8 +72,6 @@ namespace Gradius
 
             handler = new Handler();
             handler.Post(this);
-
-			//bm = BulletManager.getInstance(bullet, player);
            
         }
 
@@ -94,13 +94,14 @@ namespace Gradius
             {
                 player.DrawImage(canvas);
                 enemy.DrawImage(canvas);
-                bullet.DrawImage(canvas);
 				letter.DrawImage(canvas);
-                
-				/*foreach(Bullet b in bm.bullet)
+
+
+				foreach (Bullet b in bulletM.bullets)
 				{
-					b.DrawImage(canvas);
-				}*/
+					b.DrawImage(canvas, tiro);
+					Log.Debug("Desanhando", "draw");
+				}
             }
         }
         private void RestartGame()
@@ -117,10 +118,15 @@ namespace Gradius
             if (!isDead && !isPaused)
             {
                 player.Update(enemy);
-                enemy.Update(bullet);
-                bullet.Update(enemy);
+                enemy.Update(bulletM);
 				letter.Update(player);
-            }
+
+				foreach (Bullet b in bulletM.bullets)
+				{
+					b.Update(enemy);
+					Log.Debug("indo", "go");
+				}
+			}
             else if (isDead)
                 GameOver();
         }

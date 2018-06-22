@@ -11,7 +11,7 @@ namespace Gradius
         private Bitmap inimigo;
         private float posX, posY, width, height, speedx;
 		private bool ismoving, ismovingright;
-        private bool coll;
+        public bool destroy;
 
         private Context  context;
 
@@ -34,14 +34,14 @@ namespace Gradius
 
             ismoving = ismovingright = true;
 
-            coll = false;
+            destroy = false;
 		}
         public float GetX() { return posX; }
         public float GetY() { return posY; }
         public float GetW() { return width; }
         public float GetH() { return height; }
 
-        public void Update(Bullet bullet)
+        public void Update(BulletManager bullet)
 		{
 			if (ismoving)
 			{
@@ -50,14 +50,19 @@ namespace Gradius
 				   posX -= speedx;
 				}
 			}
-            CollBulle(bullet);
+		}
+
+		public bool Destroy
+		{
+			get { return destroy; }
+			set { destroy = true; }
 		}
 
 		public void DrawImage(Canvas canvas)
         {
-            if(coll == false)
+            if(!destroy)
                 canvas.DrawBitmap(inimigo, posX , posY, red);
-            else if(coll == true)
+            else
             {
                 //Intent i = new Intent(context, typeof(VitoriaActivity));
 
@@ -70,19 +75,6 @@ namespace Gradius
             }
 
         }
-
-        public void CollBulle(Bullet bullet)
-        {
-            if (posX < bullet.GetX() + bullet.GetW()
-                && posX + inimigo.Width > bullet.GetX()
-                && posY < bullet.GetY() + bullet.GetH()
-                && posY + inimigo.Height > bullet.GetY())
-            {
-                coll = true;
-                Log.Debug("TAGGGGGG", "Aaaaaaaaa");
-            }
-        }
-
 	}
 
 
