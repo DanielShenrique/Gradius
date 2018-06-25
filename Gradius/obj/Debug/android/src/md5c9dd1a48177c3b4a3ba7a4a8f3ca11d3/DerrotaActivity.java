@@ -1,7 +1,7 @@
-package md5a56dc2b89fceb274180e65a5d49f0dbc;
+package md5c9dd1a48177c3b4a3ba7a4a8f3ca11d3;
 
 
-public class MainActivity
+public class DerrotaActivity
 	extends android.app.Activity
 	implements
 		mono.android.IGCUserPeer
@@ -12,15 +12,15 @@ public class MainActivity
 		__md_methods = 
 			"n_onCreate:(Landroid/os/Bundle;)V:GetOnCreate_Landroid_os_Bundle_Handler\n" +
 			"";
-		mono.android.Runtime.register ("Gradius.MainActivity, Gradius", MainActivity.class, __md_methods);
+		mono.android.Runtime.register ("Gradius.DerrotaActivity, Gradius, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", DerrotaActivity.class, __md_methods);
 	}
 
 
-	public MainActivity ()
+	public DerrotaActivity ()
 	{
 		super ();
-		if (getClass () == MainActivity.class)
-			mono.android.TypeManager.Activate ("Gradius.MainActivity, Gradius", "", this, new java.lang.Object[] {  });
+		if (getClass () == DerrotaActivity.class)
+			mono.android.TypeManager.Activate ("Gradius.DerrotaActivity, Gradius, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
 	}
 
 

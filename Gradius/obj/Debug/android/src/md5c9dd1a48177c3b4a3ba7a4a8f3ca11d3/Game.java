@@ -1,4 +1,4 @@
-package md5a56dc2b89fceb274180e65a5d49f0dbc;
+package md5c9dd1a48177c3b4a3ba7a4a8f3ca11d3;
 
 
 public class Game
@@ -15,7 +15,7 @@ public class Game
 			"n_onStop:()V:GetOnStopHandler\n" +
 			"n_onDestroy:()V:GetOnDestroyHandler\n" +
 			"";
-		mono.android.Runtime.register ("Gradius.Game, Gradius", Game.class, __md_methods);
+		mono.android.Runtime.register ("Gradius.Game, Gradius, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", Game.class, __md_methods);
 	}
 
 
@@ -23,7 +23,7 @@ public class Game
 	{
 		super ();
 		if (getClass () == Game.class)
-			mono.android.TypeManager.Activate ("Gradius.Game, Gradius", "", this, new java.lang.Object[] {  });
+			mono.android.TypeManager.Activate ("Gradius.Game, Gradius, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
 	}
 
 

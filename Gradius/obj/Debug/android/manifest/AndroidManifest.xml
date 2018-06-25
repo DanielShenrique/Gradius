@@ -5,25 +5,25 @@
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
   <application android:allowBackup="true" android:label="@string/app_name" android:name="android.app.Application" android:debuggable="true">
-    <activity android:label="Gradius" android:name="md5a56dc2b89fceb274180e65a5d49f0dbc.DerrotaActivity">
+    <activity android:label="Gradius" android:name="md5c9dd1a48177c3b4a3ba7a4a8f3ca11d3.DerrotaActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
-    <activity android:label="Game" android:name="md5a56dc2b89fceb274180e65a5d49f0dbc.Game">
+    <activity android:label="Game" android:name="md5c9dd1a48177c3b4a3ba7a4a8f3ca11d3.Game">
       <intent-filter>
         <action android:name="GradiusGame" />
         <category android:name="android.intent.category.DEFAULT" />
       </intent-filter>
     </activity>
-    <activity android:label="Gradius" android:name="md5a56dc2b89fceb274180e65a5d49f0dbc.MainActivity">
+    <activity android:label="Gradius" android:name="md5c9dd1a48177c3b4a3ba7a4a8f3ca11d3.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
-    <activity android:label="Gradius" android:name="md5a56dc2b89fceb274180e65a5d49f0dbc.VitoriaActivity">
+    <activity android:label="Gradius" android:name="md5c9dd1a48177c3b4a3ba7a4a8f3ca11d3.VitoriaActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />

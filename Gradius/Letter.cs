@@ -76,17 +76,21 @@ namespace Gradius
 
 		private void SendLetterToHangman()
 		{
-			
-			/*Intent i = new Intent("Game");
-			i.AddCategory("Hangman");
+            coll = false;
 
-			i.AddFlags(ActivityFlags.ReorderToFront);
+			Intent i = new Intent("Game");
+            i = context.PackageManager.GetLaunchIntentForPackage("com.tedmrogers.launchme");
+
+            i.AddCategory("Hangman");
+
+			i.AddFlags(ActivityFlags.ClearTask);
 
 			Bundle myParameters = new Bundle();
 			myParameters.PutString("Letter", "xxxx");
-
+            myParameters.PutBoolean("GradiusWin", true);
+        
 			i.PutExtras(myParameters);
-			context.StartActivity(i);*/
+			context.StartActivity(i);
 		}
 
 		public void CollLetter(Player player)

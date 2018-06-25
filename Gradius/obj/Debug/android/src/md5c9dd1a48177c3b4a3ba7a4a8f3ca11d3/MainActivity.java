@@ -1,7 +1,7 @@
-package md5a56dc2b89fceb274180e65a5d49f0dbc;
+package md5c9dd1a48177c3b4a3ba7a4a8f3ca11d3;
 
 
-public class VitoriaActivity
+public class MainActivity
 	extends android.app.Activity
 	implements
 		mono.android.IGCUserPeer
@@ -12,15 +12,15 @@ public class VitoriaActivity
 		__md_methods = 
 			"n_onCreate:(Landroid/os/Bundle;)V:GetOnCreate_Landroid_os_Bundle_Handler\n" +
 			"";
-		mono.android.Runtime.register ("Gradius.VitoriaActivity, Gradius", VitoriaActivity.class, __md_methods);
+		mono.android.Runtime.register ("Gradius.MainActivity, Gradius, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", MainActivity.class, __md_methods);
 	}
 
 
-	public VitoriaActivity ()
+	public MainActivity ()
 	{
 		super ();
-		if (getClass () == VitoriaActivity.class)
-			mono.android.TypeManager.Activate ("Gradius.VitoriaActivity, Gradius", "", this, new java.lang.Object[] {  });
+		if (getClass () == MainActivity.class)
+			mono.android.TypeManager.Activate ("Gradius.MainActivity, Gradius, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
 	}
 
 
