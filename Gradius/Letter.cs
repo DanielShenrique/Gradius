@@ -86,7 +86,7 @@ namespace Gradius
 			i.AddFlags(ActivityFlags.ClearTask);
 
 			Bundle myParameters = new Bundle();
-			myParameters.PutString("Letter", "xxxx");
+			myParameters.PutString("Letter", "en");
             myParameters.PutBoolean("GradiusWin", true);
         
 			i.PutExtras(myParameters);
